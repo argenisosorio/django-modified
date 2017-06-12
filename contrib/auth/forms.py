@@ -21,7 +21,6 @@ from django.utils.http import urlsafe_base64_encode
 from django.utils.safestring import mark_safe
 from django.utils.text import capfirst
 from django.utils.translation import ugettext, ugettext_lazy as _
-from captcha.fields import CaptchaField
 
 
 class ReadOnlyPasswordHashWidget(forms.Widget):
@@ -160,8 +159,6 @@ class AuthenticationForm(forms.Form):
         strip=False,
         widget=forms.PasswordInput,
     )
-
-    captcha = CaptchaField()
 
     error_messages = {
         'invalid_login': _(
